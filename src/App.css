@@ -1,0 +1,55 @@
+body {
+  background-color: gainsboro;
+}
+
+.App {
+  border: solid 1px red;
+  margin: 100px  30%;
+  padding: 50px;
+  text-align: center;
+  border-radius: 15%;
+}
+
+.App h2 {
+  color: rgb(207, 43, 57);
+}
+
+.App ul {
+  list-style: "⌛";
+  cursor: pointer;
+  font-size: 25px;
+  margin: 15px;
+}
+
+.App input {
+  width: 200px;
+  height: 40px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.App button {
+  display: block;
+  margin: auto;
+  width: 150px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: black;
+  color: aliceblue;
+  border: 0;
+}
+
+.App ul li {
+  word-wrap: break-word;
+  
+}
+
+.diffstyle{
+  list-style: "👍";
+}
+
+.div2{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,52 @@
+import {useRef, useState} from 'react';
+import './App.css';
+
+function App() {
+  
+  const [x , setx] = useState([])
+  const inputRef = useRef()
+  const add = ()=> {
+  const value = inputRef.current.value
+  const newData = {completed :false , value}
+      // console.log(value)
+      setx([...x , newData])
+      inputRef.current.value =""
+  }
+  const itemDone = (index)=>{
+    const newx = [...x]
+    newx[index].completed = !newx[index].completed
+    setx(newx)
+  }
+  // console.log(x)   //////lashouf iza am yt8atayar mnn flase lal true aw la2 
+
+  const todelete = (index)=>{
+    const newx = [...x]
+    newx.splice(index,1)
+    setx(newx)
+  }
+  return (
+    <div className="App">
+      <h2> To do list </h2>
+      <ul>
+        {
+          x.map(({value , completed , } , index)=>{
+            return <div className='div2'>
+              <li className={ completed ? "diffstyle" : ""}  onClick={()=>itemDone(index)}>{value}</li>
+
+              <span  onClick={()=>todelete(index)}>X</span>
+
+            </div>
+            
+          })
+
+        }
+
+      </ul>
+      <input ref={inputRef} placeholder='Enter new task'/> 
+      <button on onClick={add}>Add</button>
+   
+    </div>
+  );
+}
+
+export default App;
